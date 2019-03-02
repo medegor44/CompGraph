@@ -28,10 +28,10 @@ namespace ComputerGr
         public Figure(Vector3 a1, Vector3 a2 ,Vector3 a3, Vector3 a4, List<Vector3> up, List<Vector3> down, PointF orig, int h)
         {
             Points = new Vector3[4] { a1, a2, a3, a4 };
-            Up = up;
-            Down = down;
             H = h;
             Origin = orig;
+            Up = up;
+            Down = down;
         }
 
         private void CalcUpDown()
@@ -87,11 +87,20 @@ namespace ComputerGr
                 int a = i;
                 int b = (i + 1) % 4;
 
-                g.DrawCurve(pen, new PointF[] {
+                g.DrawLine(pen, 
                     new PointF(f.Points[a].X[0] + f.Origin.X, f.H - (f.Points[a].X[1] + f.Origin.Y)),
                     new PointF(f.Points[b].X[0] + f.Origin.X, f.H - (f.Points[b].X[1] + f.Origin.Y))
-                });
+                );
             }
+
+            g.DrawLine(pen, 
+                    new PointF(f.Points[0].X[0] + f.Origin.X, f.H - (f.Points[0].X[1] + f.Origin.Y)),
+                    new PointF(f.Points[2].X[0] + f.Origin.X, f.H - (f.Points[2].X[1] + f.Origin.Y))
+                );
+            g.DrawLine(pen, 
+                    new PointF(f.Points[1].X[0] + f.Origin.X, f.H - (f.Points[1].X[1] + f.Origin.Y)),
+                    new PointF(f.Points[3].X[0] + f.Origin.X, f.H - (f.Points[3].X[1] + f.Origin.Y))
+                );
 
             var s = (from x in f.Up select new PointF(x.X[0] + f.Origin.X, f.H - (x.X[1] + f.Origin.Y))).ToArray();
             var t = (from x in f.Down select new PointF(x.X[0] + f.Origin.X, f.H - (x.X[1] + f.Origin.Y))).ToArray();

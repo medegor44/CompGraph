@@ -12,7 +12,11 @@ namespace ComputerGr
 
         public Matrix3()
         {
-            A = new float[3, 3];
+            A = new float[3, 3] {
+                { 1, 0, 0 },
+                { 0, 1, 0 },
+                { 0, 0, 1 }
+            };
         }
 
         public Matrix3(float[,] a)
