@@ -63,7 +63,20 @@ namespace ComputerGr
                 { 0, 0, 1}
             });
 
-            transform = rotate * transform;
+            var move1 = new Matrix3();
+            var move2 = new Matrix3();
+
+            float x, y;
+            if (ptCheckBox.Checked && float.TryParse(ptXtextBox.Text, out x) && float.TryParse(ptYtextBox.Text, out y))
+            {
+                move1.A[0, 2] = x;
+                move1.A[1, 2] = y;
+
+                move2.A[0, 2] = -x;
+                move2.A[1, 2] = -y;
+            }
+
+            transform = move1 * rotate * move2 * transform;
 
             canvas.Refresh();
         }
@@ -175,11 +188,23 @@ namespace ComputerGr
             xStretchTb.Value = (xStretchTb.Maximum + xStretchTb.Minimum) / 2;
             yStretchTb.Value = (yStretchTb.Maximum + yStretchTb.Minimum) / 2;
 
+            ptXtextBox.Enabled = false;
+            ptYtextBox.Enabled = false;
+
+            ptXtextBox.Text = ptYtextBox.Text = "0";
+            ptCheckBox.Checked = false;
+
             oldRotation = 0;
             oldXStretch = 1;
             oldYStretch = 1;
 
             canvas.Refresh();
+        }
+
+        private void ptCheckBox_CheckedChanged_1(object sender, EventArgs e)
+        {
+            ptXtextBox.Enabled = ptCheckBox.Checked;
+            ptYtextBox.Enabled = ptCheckBox.Checked;
         }
     }
 }
