@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerGr", "ComputerGr\Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerGrPlane", "ComputerGrPlane\ComputerGrPlane.csproj", "{E01780F6-821E-4072-96CC-8E3C5FA045AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rasterization", "Rasterization\Rasterization.csproj", "{B36105E6-BE9C-4A5C-B7B8-9688778F9259}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RasterTest", "RasterTest\RasterTest.csproj", "{DD72FB92-525A-4C28-8D9F-BCB86137AD5C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{E01780F6-821E-4072-96CC-8E3C5FA045AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E01780F6-821E-4072-96CC-8E3C5FA045AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E01780F6-821E-4072-96CC-8E3C5FA045AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B36105E6-BE9C-4A5C-B7B8-9688778F9259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B36105E6-BE9C-4A5C-B7B8-9688778F9259}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B36105E6-BE9C-4A5C-B7B8-9688778F9259}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B36105E6-BE9C-4A5C-B7B8-9688778F9259}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD72FB92-525A-4C28-8D9F-BCB86137AD5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD72FB92-525A-4C28-8D9F-BCB86137AD5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD72FB92-525A-4C28-8D9F-BCB86137AD5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD72FB92-525A-4C28-8D9F-BCB86137AD5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
