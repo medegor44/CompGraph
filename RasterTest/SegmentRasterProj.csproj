@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{DD72FB92-525A-4C28-8D9F-BCB86137AD5C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>RasterTest</RootNamespace>
-    <AssemblyName>RasterTest</AssemblyName>
+    <RootNamespace>RasterAlgo</RootNamespace>
+    <AssemblyName>RasterAlgo</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CircleRasterization.cs" />
+    <Compile Include="Matrix.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SegmentRaster.cs" />
+    <Compile Include="Vector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

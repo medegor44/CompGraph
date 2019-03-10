@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerGrPlane", "Computer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rasterization", "Rasterization\Rasterization.csproj", "{B36105E6-BE9C-4A5C-B7B8-9688778F9259}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RasterTest", "RasterTest\RasterTest.csproj", "{DD72FB92-525A-4C28-8D9F-BCB86137AD5C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SegmentRasterProj", "RasterTest\SegmentRasterProj.csproj", "{DD72FB92-525A-4C28-8D9F-BCB86137AD5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
