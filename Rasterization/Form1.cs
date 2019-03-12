@@ -59,7 +59,7 @@ namespace Rasterization
 
         private void DrawCircle(Graphics g, Vector a, int r)
         {
-            g.DrawEllipse(new Pen(Color.Blue), (a.X - r)*delta + origin.X, (a.Y - r)*delta + origin.Y, 2*r*delta, 2*r*delta);
+            g.DrawEllipse(new Pen(Color.Blue), ((a.X - r)*delta + origin.X), h - ((a.Y - r)*delta + origin.Y) - 2*r*delta, 2*r*delta, 2*r*delta);
             var points = CircleRaster.Rasterize(a, r);
 
             int sz = delta / 2;
@@ -76,6 +76,7 @@ namespace Rasterization
         private void canvas_Paint(object sender, PaintEventArgs e)
         {
             var g = e.Graphics;
+            g.Clear(Color.White);
             DrawGrid(g);
             if (segmentRB.Checked)
             {
