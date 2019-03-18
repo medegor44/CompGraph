@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rasterization", "Rasterizat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SegmentRasterProj", "RasterTest\SegmentRasterProj.csproj", "{DD72FB92-525A-4C28-8D9F-BCB86137AD5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SegmentCutting", "SegmentCutting\SegmentCutting.csproj", "{56587C77-D0B6-4E64-B339-3232196E353A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{DD72FB92-525A-4C28-8D9F-BCB86137AD5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD72FB92-525A-4C28-8D9F-BCB86137AD5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD72FB92-525A-4C28-8D9F-BCB86137AD5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56587C77-D0B6-4E64-B339-3232196E353A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56587C77-D0B6-4E64-B339-3232196E353A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56587C77-D0B6-4E64-B339-3232196E353A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56587C77-D0B6-4E64-B339-3232196E353A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
