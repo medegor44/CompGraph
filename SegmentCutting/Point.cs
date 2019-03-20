@@ -43,6 +43,11 @@ namespace SegmentCutting
             return new Point { X = a.X / k, Y = a.Y / k };
         }
 
+        public static double Dot(Point a, Point b)
+        {
+            return a.X * b.X + a.Y * b.Y;
+        }
+
         public double Len
         {
             get => Math.Sqrt(X * X + Y * Y);
