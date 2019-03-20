@@ -8,8 +8,20 @@ namespace SegmentCutting
 {
     class Point
     {
-        public float X { get; set; }
-        public float Y { get; set; }
+        public double X { get; set; }
+        public double Y { get; set; }
+
+        public Point()
+        {
+            X = 0;
+            Y = 0;
+        }
+
+        public Point(double x, double y)
+        {
+            X = x;
+            Y = y;
+        }
 
         public static Point operator -(Point a, Point b)
         {
@@ -21,9 +33,19 @@ namespace SegmentCutting
             return new Point { X = a.X + b.X, Y = a.Y + b.Y };
         }
 
-        public float Len
+        public static Point operator *(Point a, double k)
         {
-            get => (float)Math.Sqrt(X * X + Y * Y);
+            return new Point { X = a.X * k, Y = a.Y * k };
+        }
+
+        public static Point operator /(Point a, double k)
+        {
+            return new Point { X = a.X / k, Y = a.Y / k };
+        }
+
+        public double Len
+        {
+            get => Math.Sqrt(X * X + Y * Y);
         }
 
         public override string ToString()

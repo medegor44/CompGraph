@@ -9,7 +9,9 @@ namespace SegmentCutting
     static class CohenSutherland
     {
         private static int[] X, Y, C;
-        const float eps = 1e-6f;
+        const double eps = 1e-8f;
+        static bool midPointMode = false;
+
         private static int GetCode(Point a)
         {
             int code = 0;
@@ -33,24 +35,27 @@ namespace SegmentCutting
 
         private static Point IntersectX(Point a, Point b, int x)
         {
-            float A = (a - b).Y;
-            float B = (b - a).X;
-            float C = -a.X * A - a.Y * B;
+            double A = (a - b).Y;
+            double B = (b - a).X;
+            double C = -a.X * A - a.Y * B;
 
             return new Point { X = x, Y = (-C - A*x) / B };
         }
 
         private static Point IntersectY(Point a, Point b, int y)
         {
-            float A = (a - b).Y;
-            float B = (b - a).X;
-            float C = -a.X * A - a.Y * B;
+            double A = (a - b).Y;
+            double B = (b - a).X;
+            double C = -a.X * A - a.Y * B;
 
             return new Point { X = (-C - B*y) / A,  Y = y };
         }
 
         private static (Point, Point) GetCut(Point a, Point b)
         {
+            if (midPointMode && (a - b).Len < eps)
+                return (null, null);
+
             int codeA = GetCode(a);
             int codeB = GetCode(b);
 
@@ -62,43 +67,31 @@ namespace SegmentCutting
 
             int mask = codeA ^ codeB;
 
-            var v = b - a;
-            v.X = (v.X / v.Len)*eps;
-            v.Y = (v.Y / v.Len)*eps;
+            Point v = new Point();
+            Point mid;
 
-            if (Bit(mask, 0))
+            if (!midPointMode)
             {
-                var p = IntersectX(a, b, X[0]);
+                v = b - a;
+                v = v * eps / v.Len;
 
-                var left = GetCut(a, p - v);
-                var right = GetCut(p + v, b);
-
-                if (left.Item1 != null)
-                    return left;
-                else if (right.Item1 != null)
-                    return right;
+                if (Bit(mask, 0))
+                    mid = IntersectX(a, b, X[0]);
+                else if (Bit(mask, 2))
+                    mid = IntersectX(a, b, X[1]);
+                else if (Bit(mask, 1))
+                    mid = IntersectY(a, b, Y[0]);
                 else
-                    return (null, null);
+                    mid = IntersectY(a, b, Y[1]);
             }
-            else if (Bit(mask, 2))
-            {
-                var p = IntersectX(a, b, X[1]);
-                var left = GetCut(a, p - v);
-                var right = GetCut(p + v, b);
+            else
+                mid = (a + b) / 2;
 
-                if (left.Item1 != null)
-                    return left;
-                else if (right.Item1 != null)
-                    return right;
-                else
-                    return (null, null);
-            }
-            else if (Bit(mask, 1))
-            {
-                var p = IntersectY(a, b, Y[0]);
-                var left = GetCut(a, p - v);
-                var right = GetCut(p + v, b);
+            var left = GetCut(a, mid - v);
+            var right = GetCut(mid + v, b);
 
+            if (!midPointMode)
+            {
                 if (left.Item1 != null)
                     return left;
                 else if (right.Item1 != null)
@@ -108,24 +101,21 @@ namespace SegmentCutting
             }
             else
             {
-                var p = IntersectY(a, b, Y[1]);
-                var left = GetCut(a, p - v);
-                var right = GetCut(p + v, b);
-
-                if (left.Item1 != null)
-                    return left;
-                else if (right.Item1 != null)
+                if (left.Item1 == null)
                     return right;
+                else if (right.Item1 == null)
+                    return left;
                 else
-                    return (null, null);
+                    return (left.Item1, right.Item2);
             }
         }
 
-        public static (Point, Point) Cut(Point a, Point b, int x1, int x2, int y1, int y2)
+        public static (Point, Point) Cut(Point a, Point b, bool midpoint, int x1, int x2, int y1, int y2)
         {
             X = new int[] { x1, x2 };
             Y = new int[] { y1, y2 };
             C = new int[] { x1, y1, x2, y2};
+            midPointMode = midpoint;
 
             var t = GetCut(a, b);
 
