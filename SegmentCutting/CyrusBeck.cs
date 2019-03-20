@@ -47,7 +47,7 @@ namespace SegmentCutting
             double tin = inPoints.Max();
             double tout = outPoints.Min();
 
-            if (tin > tout + double.Epsilon)
+            if (tin > tout + double.Epsilon || !(0 <= tin && tin <= 1 && 0 <= tout && tout <= 1))
                 return (null, null);
             return (a + (b - a) * tin, a + (b - a) * tout);
         }
