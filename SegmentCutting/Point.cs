@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SegmentCutting
 {
-    class Point
+    public class Point
     {
         public double X { get; set; }
         public double Y { get; set; }
@@ -21,6 +21,11 @@ namespace SegmentCutting
         {
             X = x;
             Y = y;
+        }
+
+        public System.Drawing.PointF ToPointF(float d, float h, float dx, float dy)
+        {
+            return new System.Drawing.PointF((float)X * d + dx, h - ((float)Y * d + dy));
         }
 
         public static Point operator -(Point a, Point b)

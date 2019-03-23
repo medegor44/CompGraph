@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SegmentRasterProj", "Raster
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SegmentCutting", "SegmentCutting\SegmentCutting.csproj", "{56587C77-D0B6-4E64-B339-3232196E353A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SegmentCut", "SegmentCut\SegmentCut.csproj", "{1BAF6981-DEFF-4235-A547-5C00A3354ED5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{56587C77-D0B6-4E64-B339-3232196E353A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56587C77-D0B6-4E64-B339-3232196E353A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56587C77-D0B6-4E64-B339-3232196E353A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BAF6981-DEFF-4235-A547-5C00A3354ED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BAF6981-DEFF-4235-A547-5C00A3354ED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BAF6981-DEFF-4235-A547-5C00A3354ED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BAF6981-DEFF-4235-A547-5C00A3354ED5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

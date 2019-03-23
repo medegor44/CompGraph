@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace SegmentCutting
 {
-    static class CyrusBeck
+    public static class CyrusBeck
     {
+        public static List<double> inPoints;
+        public static List<double> outPoints;
+
         public static (Point, Point) Cut(Point a, Point b, Point[] polygon)
         {
             int n = polygon.Length;
 
-            List<double> inPoints = new List<double>();
-            List<double> outPoints = new List<double>();
+            inPoints = new List<double>();
+            outPoints = new List<double>();
 
             for (int i = 0; i < n; i++)
             {
@@ -47,8 +50,11 @@ namespace SegmentCutting
             double tin = inPoints.Max();
             double tout = outPoints.Min();
 
-            if (tin > tout + double.Epsilon || !(0 <= tin && tin <= 1 && 0 <= tout && tout <= 1))
+            if (tin > tout + double.Epsilon)
                 return (null, null);
+
+            tin = Math.Max(tin, 0);
+            tout = Math.Min(tout, 1);
             return (a + (b - a) * tin, a + (b - a) * tout);
         }
     }
