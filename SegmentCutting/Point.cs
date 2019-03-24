@@ -60,7 +60,7 @@ namespace SegmentCutting
 
         public override string ToString()
         {
-            return string.Format($"({X}, {Y})");
+            return string.Format($"({X:f}, {Y:f})");
         }
     }
 }

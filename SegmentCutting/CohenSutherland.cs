@@ -8,8 +8,9 @@ namespace SegmentCutting
 {
     static class CohenSutherland
     {
+        public static int count;
         private static int[] X, Y, C;
-        const double eps = 1e-8f;
+        const double eps = 1e-6f;
         static bool midPointMode = false;
 
         private static int GetCode(Point a)
@@ -53,6 +54,7 @@ namespace SegmentCutting
 
         private static (Point, Point) GetCut(Point a, Point b)
         {
+            count++;
             if (midPointMode && (a - b).Len < eps)
                 return (null, null);
 
@@ -116,6 +118,7 @@ namespace SegmentCutting
             Y = new int[] { y1, y2 };
             C = new int[] { x1, y1, x2, y2};
             midPointMode = midpoint;
+            count = 0;
 
             var t = GetCut(a, b);
 

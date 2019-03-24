@@ -11,9 +11,10 @@ namespace SegmentCutting
     {
         static void Main(string[] args)
         {
-            var t = CyrusBeck.Cut(new Point(0, 0), new Point(-1, -1), new Point[] { new Point(1, 1), new Point(3, 1), new Point(1, 3) });
+            var t = CohenSutherland.Cut(new Point(-1, 2), new Point(1, -1), true, 0, 10, 0, 10);
 
-            Console.WriteLine(t.Item1);
+            Console.WriteLine($"Count of iterations: {CohenSutherland.count}");
+            Console.WriteLine( t.Item1);
             Console.WriteLine(t.Item2);
         }
     }

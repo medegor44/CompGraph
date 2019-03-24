@@ -53,6 +53,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="algo_comp.md" />
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
