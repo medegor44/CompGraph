@@ -26,7 +26,7 @@ namespace SegmentCut
 
         private void PaintAxis(Graphics g)
         {
-            var p = new Pen(Color.WhiteSmoke);
+            var p = new Pen(Color.LightGray);
 
             for (int i = 0; i < canvas.Width; i += delta)
                 g.DrawLine(p, i, 0, i, canvas.Height);
@@ -68,6 +68,22 @@ namespace SegmentCut
                 g.DrawLine(new Pen(Color.Green, 1.5f), 
                     cutted.Item1.ToPointF(delta, h, origin.X, origin.Y), 
                     cutted.Item2.ToPointF(delta, h, origin.X, origin.Y));
+
+                var A = segm.Item1;
+                var B = segm.Item2;
+
+                var inPts = (from t in SegmentCutting.CyrusBeck.inPoints
+                             select (A + (B - A) * t).ToPointF(delta, h, origin.X, origin.Y)).ToArray();
+                var outPts = (from t in SegmentCutting.CyrusBeck.outPoints
+                              select (A + (B - A) * t).ToPointF(delta, h, origin.X, origin.Y)).ToArray();
+
+                g.FillRectangles(new SolidBrush(Color.Violet), 
+                    (from p in inPts
+                     select new RectangleF(p.X - (float)delta / 4, p.Y - (float)delta / 4, (float)delta / 2, (float)delta / 2)).ToArray());
+
+                g.FillRectangles(new SolidBrush(Color.DarkBlue), 
+                    (from p in outPts
+                     select new RectangleF(p.X - (float)delta / 4, p.Y - (float)delta / 4, (float)delta / 2, (float)delta / 2)).ToArray());
             }
         }
 
