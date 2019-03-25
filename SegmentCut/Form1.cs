@@ -62,12 +62,12 @@ namespace SegmentCut
                     segm.Item1.ToPointF(delta, h, origin.X, origin.Y), 
                     segm.Item2.ToPointF(delta, h, origin.X, origin.Y));
 
-                if (cutted.Item1 == null)
-                    return;
-
-                g.DrawLine(new Pen(Color.Green, 1.5f), 
-                    cutted.Item1.ToPointF(delta, h, origin.X, origin.Y), 
-                    cutted.Item2.ToPointF(delta, h, origin.X, origin.Y));
+                if (cutted.Item1 != null)
+                {
+                    g.DrawLine(new Pen(Color.Green, 1.5f),
+                        cutted.Item1.ToPointF(delta, h, origin.X, origin.Y),
+                        cutted.Item2.ToPointF(delta, h, origin.X, origin.Y));
+                }
 
                 var A = segm.Item1;
                 var B = segm.Item2;
