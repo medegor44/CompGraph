@@ -50,7 +50,7 @@ namespace SegmentCutting
             double tin = inPoints.Max();
             double tout = outPoints.Min();
 
-            if (tin > tout + double.Epsilon)
+            if (tin >= tout)
                 return (null, null);
 
             tin = Math.Max(tin, 0);
