@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinearOperations
 {
@@ -30,7 +26,7 @@ namespace LinearOperations
 
         public Vector(int x, int y)
         {
-            coord = new int[3] { x, y, 1};
+            coord = new int[3] { x, y, 1 };
         }
 
         public Point ToPoint()
@@ -70,6 +66,31 @@ namespace LinearOperations
         public override string ToString()
         {
             return $"({X}, {Y})";
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is null || !(obj is Vector))
+                return false;
+
+            Vector v = (Vector)obj;
+
+            return v.X == X && v.Y == Y;
+        }
+
+        public override int GetHashCode()
+        {
+            return X * 10000 + Y;
+        }
+
+        public static bool operator ==(Vector v1, Vector v2)
+        {
+            return v1.Equals(v2);
+        }
+
+        public static bool operator !=(Vector v1, Vector v2)
+        {
+            return !v1.Equals(v2);
         }
     }
 

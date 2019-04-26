@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2035
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerGr", "ComputerGr\ComputerGr.csproj", "{F0191D5E-FA0C-44EA-858D-EC271FE0D8EB}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SegmentCutting", "SegmentCutting\SegmentCutting.csproj", "{56587C77-D0B6-4E64-B339-3232196E353A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SegmentCut", "SegmentCut\SegmentCut.csproj", "{1BAF6981-DEFF-4235-A547-5C00A3354ED5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FillPolygonWindow", "FillPolygonWindow\FillPolygonWindow.csproj", "{8B2C6F7E-98B2-4393-9961-560A9310A73E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{1BAF6981-DEFF-4235-A547-5C00A3354ED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BAF6981-DEFF-4235-A547-5C00A3354ED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BAF6981-DEFF-4235-A547-5C00A3354ED5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B2C6F7E-98B2-4393-9961-560A9310A73E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B2C6F7E-98B2-4393-9961-560A9310A73E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B2C6F7E-98B2-4393-9961-560A9310A73E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B2C6F7E-98B2-4393-9961-560A9310A73E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
