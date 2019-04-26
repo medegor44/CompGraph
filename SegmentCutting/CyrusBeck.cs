@@ -18,6 +18,8 @@ namespace SegmentCutting
             inPoints = new List<double>();
             outPoints = new List<double>();
 
+            bool ok = true;
+
             for (int i = 0; i < n; i++)
             {
                 Point e1 = polygon[i];
@@ -34,7 +36,7 @@ namespace SegmentCutting
                     double C = -A * e1.X - B * e1.Y;
 
                     if ((a.X * A + a.Y * B + C) * (e3.X * A + e3.Y * B + C) < 0)
-                        return (null, null);
+                        ok = false;
 
                     continue;
                 }
@@ -50,11 +52,12 @@ namespace SegmentCutting
             double tin = inPoints.Max();
             double tout = outPoints.Min();
 
-            if (tin > tout + double.Epsilon)
-                return (null, null);
-
             tin = Math.Max(tin, 0);
             tout = Math.Min(tout, 1);
+
+            if (!ok || tin >= tout)
+                return (null, null);
+
             return (a + (b - a) * tin, a + (b - a) * tout);
         }
     }

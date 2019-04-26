@@ -77,13 +77,18 @@ namespace SegmentCut
                 var outPts = (from t in SegmentCutting.CyrusBeck.outPoints
                               select (A + (B - A) * t).ToPointF(delta, h, origin.X, origin.Y)).ToArray();
 
-                g.FillRectangles(new SolidBrush(Color.Violet), 
-                    (from p in inPts
-                     select new RectangleF(p.X - (float)delta / 4, p.Y - (float)delta / 4, (float)delta / 2, (float)delta / 2)).ToArray());
-
-                g.FillRectangles(new SolidBrush(Color.DarkBlue), 
-                    (from p in outPts
-                     select new RectangleF(p.X - (float)delta / 4, p.Y - (float)delta / 4, (float)delta / 2, (float)delta / 2)).ToArray());
+                if (inPts != null && inPts.Length > 0)
+                {
+                    g.FillRectangles(new SolidBrush(Color.Violet),
+                        (from p in inPts
+                         select new RectangleF(p.X - (float)delta / 4, p.Y - (float)delta / 4, (float)delta / 2, (float)delta / 2)).ToArray());
+                }
+                if (outPts != null && outPts.Length > 0)
+                {
+                    g.FillRectangles(new SolidBrush(Color.DarkBlue),
+                        (from p in outPts
+                         select new RectangleF(p.X - (float)delta / 4, p.Y - (float)delta / 4, (float)delta / 2, (float)delta / 2)).ToArray());
+                }
             }
         }
 
