@@ -80,7 +80,7 @@ namespace LinearOperations
 
         public override int GetHashCode()
         {
-            return X * 10000 + Y;
+            return X * 1000000 + Y;
         }
 
         public static bool operator ==(Vector v1, Vector v2)

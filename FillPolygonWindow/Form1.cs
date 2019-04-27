@@ -10,18 +10,20 @@ namespace FillPolygonWindow
 {
     public partial class Form1 : Form
     {
-        const int delta = 10;
+        const int delta = 20;
         List<Vector> filledPolygon;
         Vector[] polygon;
-        bool needsClear;
+        List<Vector> rasterizedBorder;
 
-        int h;
         int currPoint;
         Point origin;
 
         public Form1()
         {
             InitializeComponent();
+            filledPolygon = new List<Vector>();
+            rasterizedBorder = new List<Vector>();
+
             origin = new Point(canvas.Width / 2, canvas.Height / 2);
         }
 
@@ -47,6 +49,8 @@ namespace FillPolygonWindow
             for (int i = 0; i < strs.Length; i += 2)
                 vectors[i / 2] = new Vector(int.Parse(strs[i]), int.Parse(strs[i + 1]));
 
+            rasterizedBorder = FillWithSeed.RaserizedPolygon(vectors);
+
             return vectors;
         }
 
@@ -63,29 +67,55 @@ namespace FillPolygonWindow
 
             filledPolygon = FillWithSeed.FillPolygon(polygon, start);
 
-            currPoint = -1;
-            needsClear = true;
+            currPoint = 0;
             timer1.Start();
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            currPoint = Math.Min(currPoint + 1, filledPolygon.Count);
+            currPoint++;
+            if (currPoint == filledPolygon.Count)
+                timer1.Stop();
+
             canvas.Refresh();
+        }
+
+        void DrawPolygon(Graphics g)
+        {
+            if (polygon == null)
+                return;
+            var points = (from p in polygon select new Point(p.X * delta + origin.X, canvas.Height - (p.Y * delta + origin.Y))).ToList();
+            points.Add(points[0]);
+
+            g.DrawLines(new Pen(Color.Red), points.ToArray());
+        }
+
+        void DrawFilledPoint(Graphics g, List<Vector> from, int i, Color col)
+        {
+            var pt = from[i];
+            int x = pt.X * delta + origin.X - delta/4;
+            int y = canvas.Height - (pt.Y * delta + origin.Y) - delta / 4;
+
+            g.FillRectangle(new SolidBrush(col), x, y, delta/2, delta/2);
+        }
+
+        void DrawRasterizedBorder(Graphics g)
+        {
+            for (int i = 0; i < rasterizedBorder.Count; i++)
+                DrawFilledPoint(g, rasterizedBorder, i, Color.Orange);
         }
 
         private void Canvas_Paint(object sender, PaintEventArgs e)
         {
             var g = e.Graphics;
-            if (needsClear)
-            {
-                g.Clear(Color.White);
-                PaintAxis(g);
-                g.DrawLines(new Pen(new SolidBrush(Color.Red)), 
-                    (from p in polygon select p.ToPoint())
-                    .Union(new Point[] { polygon[polygon.Length - 1].ToPoint() })
-                    .ToArray());
-            }
+            g.Clear(Color.White);
+            PaintAxis(g);
+            DrawRasterizedBorder(g);
+            DrawPolygon(g);
+
+
+            for (int i = 0; i < currPoint; i++)
+                DrawFilledPoint(g, filledPolygon, i, Color.Blue);
         }
     }
 }

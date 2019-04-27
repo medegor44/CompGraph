@@ -58,7 +58,7 @@ namespace SegmentRasterization
 
         private static Vector Normalize(Vector a, Vector b)
         {
-            if (a.X > b.X)
+            if (a.X > b.X || (a.X == b.X && a.Y > b.Y))
                 Swap(ref a, ref b);
 
             trA = new Matrix3();
