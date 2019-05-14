@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28803.202
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerGr", "ComputerGr\ComputerGr.csproj", "{F0191D5E-FA0C-44EA-858D-EC271FE0D8EB}"
 EndProject
@@ -16,6 +16,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SegmentCut", "SegmentCut\SegmentCut.csproj", "{1BAF6981-DEFF-4235-A547-5C00A3354ED5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FillPolygonWindow", "FillPolygonWindow\FillPolygonWindow.csproj", "{8B2C6F7E-98B2-4393-9961-560A9310A73E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinearAlgebra", "LinearAlgebra\LinearAlgebra.csproj", "{92D04A2E-C24D-4038-A95F-719BE62545F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvexHullAlgo", "ConvexHullAlgo\ConvexHullAlgo.csproj", "{F5BF0C06-7C05-4A0B-8A02-10AF8F98DABB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvexHullText", "ConvexHullText\ConvexHullText.csproj", "{35A383F1-4035-4386-AE5F-0B6523D0383F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +57,18 @@ Global
 		{8B2C6F7E-98B2-4393-9961-560A9310A73E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B2C6F7E-98B2-4393-9961-560A9310A73E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B2C6F7E-98B2-4393-9961-560A9310A73E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92D04A2E-C24D-4038-A95F-719BE62545F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92D04A2E-C24D-4038-A95F-719BE62545F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92D04A2E-C24D-4038-A95F-719BE62545F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92D04A2E-C24D-4038-A95F-719BE62545F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5BF0C06-7C05-4A0B-8A02-10AF8F98DABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5BF0C06-7C05-4A0B-8A02-10AF8F98DABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5BF0C06-7C05-4A0B-8A02-10AF8F98DABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5BF0C06-7C05-4A0B-8A02-10AF8F98DABB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35A383F1-4035-4386-AE5F-0B6523D0383F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35A383F1-4035-4386-AE5F-0B6523D0383F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35A383F1-4035-4386-AE5F-0B6523D0383F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35A383F1-4035-4386-AE5F-0B6523D0383F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
