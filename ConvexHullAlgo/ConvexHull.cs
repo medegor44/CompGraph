@@ -72,12 +72,46 @@ namespace ConvexHullAlgo
                         origin = p;
                 }
             }
+            
+            border.Remove(origin);
 
             border.Sort((x, y) => {
-                return (x - origin) ^ (y - origin);
+                int q = Math.Sign((x - origin) ^ (y - origin));
+
+                if (q == 0)
+                    return Math.Sign((x - origin).Len - (y - origin).Len);
+                else
+                    return q;
             });
+
+            int start = -1;
+            for (int i = border.Count - 2; i >= 0; i--)
+                if (((border[i] - origin) ^ (border[border.Count - 1] - origin)) != 0)
+                {
+                    start = i + 1;
+                    break;
+                }
+
+            border.Reverse(start, border.Count - start);
+
+            border.Add(origin);
 
             return border;
         }
     }
 }
+
+/*
+0 0
+1 0 
+2 0 
+3 0
+3 1
+3 2
+3 3
+2 3
+1 3
+0 3
+0 2
+0 1
+*/

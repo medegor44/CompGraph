@@ -31,8 +31,12 @@ namespace LinearAlgebra
 
         public Point ToPoint()
         {
-
             return new Point(X, Y);
+        }
+
+        public Point ToPoint(int h, int d, Point origin)
+        {
+            return new Point(X*d + origin.X, h - (Y*d + origin.Y));
         }
 
         public static Vector2 operator +(Vector2 v1, Vector2 v2)

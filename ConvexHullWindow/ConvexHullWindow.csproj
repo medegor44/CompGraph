@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8B2C6F7E-98B2-4393-9961-560A9310A73E}</ProjectGuid>
+    <ProjectGuid>{5E95E066-B6F6-4F67-A479-CE88F9B95B89}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>FillPolygonWindow</RootNamespace>
-    <AssemblyName>FillPolygonWindow</AssemblyName>
+    <RootNamespace>ConvexHullWindow</RootNamespace>
+    <AssemblyName>ConvexHullWindow</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FillWithSeed.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,7 +65,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -90,10 +87,6 @@
     <ProjectReference Include="..\LinearAlgebra\LinearAlgebra.csproj">
       <Project>{92d04a2e-c24d-4038-a95f-719be62545f3}</Project>
       <Name>LinearAlgebra</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RasterTest\SegmentRasterProj.csproj">
-      <Project>{dd72fb92-525a-4c28-8d9f-bcb86137ad5c}</Project>
-      <Name>SegmentRasterProj</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

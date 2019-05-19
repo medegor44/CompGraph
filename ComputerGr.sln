@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvexHullAlgo", "ConvexHul
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvexHullText", "ConvexHullText\ConvexHullText.csproj", "{35A383F1-4035-4386-AE5F-0B6523D0383F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvexHullWindow", "ConvexHullWindow\ConvexHullWindow.csproj", "{5E95E066-B6F6-4F67-A479-CE88F9B95B89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{35A383F1-4035-4386-AE5F-0B6523D0383F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35A383F1-4035-4386-AE5F-0B6523D0383F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35A383F1-4035-4386-AE5F-0B6523D0383F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E95E066-B6F6-4F67-A479-CE88F9B95B89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E95E066-B6F6-4F67-A479-CE88F9B95B89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E95E066-B6F6-4F67-A479-CE88F9B95B89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E95E066-B6F6-4F67-A479-CE88F9B95B89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
